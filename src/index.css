@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 font-outfit text-white overflow-x-hidden relative;
+    min-height: 100vh;
+    
+    /* Rich dark gradient background with warm orange undertones */
+    background: linear-gradient(135deg, 
+      #0a0a0a 0%,
+      #1a0f0a 15%,
+      #1a1a1a 30%,
+      #2a1510 50%,
+      #1a1a1a 65%,
+      #1a0f0a 85%,
+      #0a0a0a 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 25s ease infinite;
+  }
+
+  /* Vibrant orange glassmorphism overlay with warm glowing orbs */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(255, 107, 53, 0.45) 0%, transparent 35%),
+      radial-gradient(circle at 85% 20%, rgba(255, 140, 66, 0.4) 0%, transparent 35%),
+      radial-gradient(circle at 50% 50%, rgba(255, 167, 38, 0.35) 0%, transparent 40%),
+      radial-gradient(circle at 80% 85%, rgba(255, 87, 34, 0.4) 0%, transparent 38%),
+      radial-gradient(circle at 20% 85%, rgba(255, 152, 0, 0.35) 0%, transparent 35%);
+    z-index: -1;
+    pointer-events: none;
+    animation: orbsMove 30s ease-in-out infinite;
+    filter: blur(70px);
+  }
+
+  /* Additional floating gradient orbs with warm amber tones */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 90% 10%, rgba(255, 167, 38, 0.3) 0%, transparent 30%),
+      radial-gradient(circle at 10% 90%, rgba(255, 140, 66, 0.3) 0%, transparent 30%),
+      radial-gradient(circle at 65% 70%, rgba(255, 107, 53, 0.25) 0%, transparent 35%),
+      radial-gradient(circle at 35% 30%, rgba(255, 87, 34, 0.2) 0%, transparent 30%);
+    animation: orbsFloat 35s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(60px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Premium Glass Effect with Orange Glow */
+  .glass-effect {
+    @apply relative overflow-hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: saturate(180%) blur(25px);
+    -webkit-backdrop-filter: saturate(180%) blur(25px);
+    border: 1px solid rgba(255, 140, 66, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(255, 107, 53, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.12) 0%,
+      rgba(255, 167, 38, 0.08) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glass-effect > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .glass-effect-hover:hover {
+    background: rgba(255, 107, 53, 0.08);
+    border-color: rgba(255, 107, 53, 0.6);
+    box-shadow: 
+      0 16px 48px 0 rgba(255, 107, 53, 0.5),
+      0 0 40px rgba(255, 107, 53, 0.3),
+      0 0 0 1px rgba(255,140,66,0.3) inset;
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .glass-effect-hover:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Background Animations */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes orbsMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translate(100px, -80px) scale(1.2) rotate(120deg);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate(-80px, 100px) scale(0.9) rotate(240deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes orbsFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 50px) scale(1.1);
+  }
+}
+
+/* Custom Scrollbar with Orange Gradient */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff8c42 0%, #ffa726 50%, #ff6b35 100%);
+}
