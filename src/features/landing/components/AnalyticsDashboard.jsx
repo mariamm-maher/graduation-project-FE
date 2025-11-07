@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { dashboardCards } from '../data/content'
+import { dashboardCards } from '../../../data/content'
 
 const AnalyticsDashboard = () => {
   return (

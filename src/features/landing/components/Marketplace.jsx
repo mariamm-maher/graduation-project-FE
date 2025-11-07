@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { marketplaceCards } from '../data/content'
+import { marketplaceCards } from '../../../data/content'
 
 const Marketplace = () => {
   return (

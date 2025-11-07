@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Bell, MessageSquare, Shield, Zap, User, Building2, Send, Paperclip, Users } from 'lucide-react'
-import { commFeatures, roleBadges, chatMessages } from '../data/content'
+import { commFeatures, roleBadges, chatMessages } from '../../../data/content'
 
 const iconMap = {
   '🔔': Bell,

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { plannerFeatures } from '../data/content'
+import { plannerFeatures } from '../../../data/content'
 import { Sparkles, Target, TrendingUp, Palette, Zap } from 'lucide-react'
 
 const iconMap = {

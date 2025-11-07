@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Users, TrendingUp, CheckCircle2, Clock, DollarSign, Target, Star, AlertCircle } from 'lucide-react'
-import { boardFeatures, kanbanColumns } from '../data/content'
+import { boardFeatures, kanbanColumns } from '../../../data/content'
 
 const CollaborationBoard = () => {
   return (

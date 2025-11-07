@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { aiBenefits } from '../data/content'
+import { aiBenefits } from '../../../data/content'
 
 const AIInAction = () => {
   return (

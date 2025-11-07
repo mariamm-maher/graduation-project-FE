@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Brain, LayoutGrid, BarChart3, Users, Calendar, Zap } from 'lucide-react'
-import { features } from '../data/content'
+import { features } from '../../../data/content'
 
 const iconMap = {
   brain: Brain,

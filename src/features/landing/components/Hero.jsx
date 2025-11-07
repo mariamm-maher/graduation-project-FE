@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { useCounter, useInView } from '../hooks/useScrollEffects'
-import { heroStats, trustBadges } from '../data/content'
+import { useCounter, useInView } from '../../../hooks/useScrollEffects'
+import { heroStats, trustBadges } from '../../../data/content'
 import { Rocket, CheckCircle2, BarChart3, Target, Smartphone, Zap, Play } from 'lucide-react'
 
 const Hero = () => {
